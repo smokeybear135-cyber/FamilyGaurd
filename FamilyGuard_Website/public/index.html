@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <meta name="theme-color" content="#f6f9ff" />
+ <meta name="description" content="FamilyGuard: a browser-based family dashboard with QR pairing, screen-time plans and parent-approved requests." />
+ <meta name="referrer" content="no-referrer" />
+ <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+ <link rel="apple-touch-icon" href="/icon-192.png" />
+ <link rel="manifest" href="/manifest.json" />
+ <link rel="stylesheet" href="/style.css" />
+ <title>FamilyGuard | One family, connected</title>
+</head>
+<body>
+ <div class="shell">
+  <header class="topbar">
+   <a class="brand" href="/" aria-label="FamilyGuard home"><img src="/logo.svg" alt="FamilyGuard logo"/><span>Family<span class="brand-accent">Guard</span><small>Family safety dashboard</small></span></a>
+   <div class="header-actions"><span id="badge" class="site-badge">Website edition</span><button id="logout" type="button" class="text-button hidden">Sign out</button></div>
+  </header>
+  <main id="app" aria-live="polite"></main>
+  <footer><span>FamilyGuard website prototype</span><span>Browser-based account linking, not full-device parental controls.</span></footer>
+ </div>
+ <div id="toast" role="status" aria-live="polite" class="toast hidden"></div>
+ <script src="/app.js" defer></script>
+ <script>
+ if ('serviceWorker' in navigator && window.isSecureContext) {
+   window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
+ }
+ </script>
+</body>
+</html>

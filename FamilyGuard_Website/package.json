@@ -1,0 +1,9 @@
+{
+  "name": "familyguard-website",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Browser-only parent / child QR-paired FamilyGuard website demonstration",
+  "scripts": {"start": "node server.js", "test": "node test/smoke-test.js"},
+  "engines": {"node": ">=18"},
+  "license": "UNLICENSED"
+}

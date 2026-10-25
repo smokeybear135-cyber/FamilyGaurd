@@ -1,0 +1,15 @@
+# For local tests or placement behind an HTTPS reverse proxy.
+# Do not publish to the open Internet with real child details before a security/privacy review.
+services:
+  familyguard:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      FAMILYGUARD_DATA_DIR: /data
+      # FAMILYGUARD_PUBLIC_URL: https://family.example.com
+    volumes:
+      - familyguard_data:/data
+    restart: unless-stopped
+volumes:
+  familyguard_data:
